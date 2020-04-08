@@ -1,0 +1,19 @@
+nav {
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    h2 {
+        color: rebeccapurple;
+        font-weight: bold;
+    }
+    ul {
+        display: flex;
+        list-style: none;
+        li {
+            color: #333;
+        }
+        li:not(:last-child) {
+            margin-right: 20px;
+        }
+    }
+}
