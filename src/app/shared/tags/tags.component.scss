@@ -1,0 +1,12 @@
+ul {
+    list-style: none;
+    display: inline-flex;
+    flex-wrap: wrap;
+    li {
+        border-radius: 8px;
+        border: 1px solid rebeccapurple;
+        padding: 5px 10px;
+        margin-right: 15px;
+        margin-top: 15px;
+    }
+}
