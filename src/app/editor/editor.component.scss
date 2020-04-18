@@ -1,0 +1,53 @@
+.main {
+    min-height: 100vh;
+    padding-bottom: 50px;
+}
+
+form {
+    width: 50%;
+    margin: 0 auto;
+    margin-top: 30px;
+    .md-form {
+        margin-top: 30px;
+        input,
+        textarea {
+            border: 1px solid rgb(161, 161, 161);
+            border-radius: 8px;
+            padding: 20px;
+            padding-right: 0;
+            width: 97%;
+            color: #333;
+            font-size: 25px;
+        }
+         ::placeholder {
+            font-size: 25px;
+            color: rgb(172, 172, 172);
+        }
+    }
+    .btn-container {
+        margin-top: 30px;
+        display: flex;
+        button {
+            border-radius: 8px;
+            padding: 20px 50px;
+            border: none;
+            font-size: 25px;
+            cursor: pointer;
+        }
+        button.post {
+            font-weight: bold;
+            background-color: rebeccapurple;
+            color: #ffffff;
+            margin-left: auto;
+        }
+        button.post[disabled] {
+            background-color: rgb(205, 164, 246);
+        }
+    }
+}
+
+.errorMessage {
+    color: red;
+    margin-bottom: 20px;
+    font-size: 20px;
+}

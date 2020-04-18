@@ -1,1 +1,34 @@
-<p>settings works!</p>
+<app-header></app-header>
+
+<div class="main">
+    <form (ngSubmit)='submit(form)' #form='ngForm'>
+        <div class='heading'>
+            <h1>Your Settings</h1>
+        </div>
+
+        <div class="md-form">
+            <input type="text" placeholder="URL of profile image" name="image" [(ngModel)]='urlOfProfileImage'>
+        </div>
+        <div class="md-form">
+            <input type="text" placeholder="Username" name="username" [(ngModel)]='username'>
+        </div>
+        <div class="md-form">
+            <textarea type="text" placeholder="Short bio about you" name="bio" [(ngModel)]='bio'></textarea>
+        </div>
+        <div class="md-form">
+            <input type="email" placeholder="Email" name="email" [(ngModel)]='email'>
+        </div>
+        <div class="md-form">
+            <input type="password" placeholder="New Password" name="token" ngModel>
+        </div>
+
+        <div class="btn-container">
+            <button type="submit" class="update-settings">Update Settings</button>
+        </div>
+        <div class="btn-container log-out">
+            <button class="log-out" (click)='logOut()'>Or click to logout</button>
+        </div>
+    </form>
+</div>
+
+<app-footer></app-footer>

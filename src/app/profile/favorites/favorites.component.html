@@ -1,0 +1,10 @@
+<app-spinner *ngIf='!listOfArticles'></app-spinner>
+<ul class='article-list'>
+    <li class="singleArticle" *ngFor='let article of listOfArticles | paginate: config' routerLink='/article/{{article.slug}}'>
+        <app-single-article [article]='article'></app-single-article>
+    </li>
+</ul>
+
+<div class="pagination-container" *ngIf='this.listOfArticles?.length > 0'>
+    <pagination-controls (pageChange)='pageChanged($event)' [nextLabel]='""' [previousLabel]='""' id='favorites'></pagination-controls>
+</div>

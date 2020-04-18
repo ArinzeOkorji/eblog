@@ -1,10 +1,21 @@
 <nav>
     <h2>eBlog</h2>
 
-    <ul>
+    <!-- <ul>
         <li>Home</li>
         <li>New Article</li>
         <li>Settings</li>
         <li>Admin</li>
+    </ul> -->
+    <ul *ngIf='!this.authService.userName'>
+        <li routerLink="/" routerLinkActive='active' [routerLinkActiveOptions]="{ exact: true }">Home</li>
+        <li routerLink="/login" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Sign in</li>
+        <li routerLink="/register" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Sign up</li>
+    </ul>
+    <ul *ngIf='this.authService.userName'>
+        <li routerLink="/" routerLinkActive='active' [routerLinkActiveOptions]="{ exact: true }">Home</li>
+        <li routerLink='/editor' routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }"> <i class="far fa-file"></i> New Article</li>
+        <li routerLink='/settings' routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }"> <i class="fas fa-cog"></i> Settings</li>
+        <li routerLink='/profile/{{this.authService.userName}}' (click)='goToProfile(this.authService.userName)' routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">{{this.authService.userName}}</li>
     </ul>
 </nav>

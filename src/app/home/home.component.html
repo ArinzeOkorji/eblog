@@ -1,50 +1,45 @@
 <app-header></app-header>
 
-<div class='home-banner'>
-    <div>
-        <h1>eBlog</h1>
-        <span>A frontend developer challenge.</span>
-    </div>
-</div>
-
-<div class='container mt-3'>
-    <div class="row">
-        <div class="col-lg-3 col-12">
-            <div class='tags-container'>
-                <h2>Popular Tags</h2>
-                <div>
-                    <app-tags [tags]='popularTags'></app-tags>
-                </div>
-            </div>
+<div class="main">
+    <div class='home-banner'>
+        <div>
+            <h1>eBlog</h1>
+            <span>A frontend developer challenge.</span>
         </div>
-        <div class="col-lg-9 col-12">
-            <ul class='feedsNav'>
-                <li>Your Feed</li>
-                <li>Global Feed</li>
-            </ul>
+    </div>
 
-            <div>
-                <div class='article-top'>
-                    <div class='author-details'>
-                        <img src="" alt="">
-                        <div class='article-summary'>
-                            <span class='author-name'>Admin</span>
-                            <span class="article-date">8/4/2020</span>
-                        </div>
-                    </div>
-                    <div class="favorites-count"><i class="fas fa-heart"></i> 4</div>
-                </div>
-                <div class="article-middle">
-                    <h3>COVID-19 Lockdown: We Have Developed Protocols To Remove BottleNecks - FG</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque dolores libero reprehenderit ratione provident, possimus ducimus reiciendis tempore ipsam aut exercitationem error eos porro, sed atque alias sequi recusandae facere.</p>
-                </div>
-                <div class="article-bottom">
-                    <span>Read More...</span>
+    <div class='container mt-3 mb-3'>
+        <div class="row">
+            <div class="col-lg-3 col-12">
+                <div class='tags-container'>
+                    <h2>Popular Tags</h2>
                     <div>
-                        <app-tags [tags]='articleTags'></app-tags>
+                        <app-spinner *ngIf='!popularTags'></app-spinner>
+                        <app-tags [tags]='popularTags' [isPopularTag]='true'></app-tags>
                     </div>
+                </div>
+            </div>
+            <div class="col-lg-9 col-12">
+                <ul class='feedsNav'>
+                    <li (click)='select("Your Feed")' [ngClass]='{active: this.homeService.selected === "Your Feed"}'>Your Feed</li>
+                    <li (click)='select("Global Feed")' [ngClass]='{active: this.homeService.selected === "Global Feed"}'>Global Feed</li>
+                    <li class='active' *ngIf='this.tag'>#{{this.tag}}</li>
+                </ul>
+
+
+                <app-spinner *ngIf='!listOfArticles'></app-spinner>
+                <ul class='article-list mb-3'>
+                    <li class="singleArticle" *ngFor='let article of listOfArticles | paginate: config'>
+                        <app-single-article [article]='article'></app-single-article>
+                    </li>
+                </ul>
+
+                <div *ngIf='this.listOfArticles?.length > 0'>
+                    <pagination-controls (pageChange)='pageChanged($event)' [nextLabel]='""' [previousLabel]='""' id='home'></pagination-controls>
                 </div>
             </div>
         </div>
     </div>
 </div>
+
+<app-footer></app-footer>

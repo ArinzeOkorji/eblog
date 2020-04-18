@@ -1,0 +1,36 @@
+<div>
+    <div class='article-top'>
+        <div class='author-details'>
+            <img *ngIf="!article.author.image" src="" alt="" (click)='goToProfile(article.author.username)'>
+            <img *ngIf="article.author.image" src="{{article.author.image}}" alt="" (click)='goToProfile(article.author.username)'>
+            <div class='article-summary'>
+                <span class='author-name' (click)='goToProfile(article.author.username)'>{{article.author.username}}</span>
+                <span class="article-date">{{article.createdAt | date}}</span>
+            </div>
+        </div>
+        <div class='panel'>
+            <div class="favorites-count" [ngClass]='{favorited: this.favoriteStatus === true}' (click)='toggleFavorite(article); this.favoriteStatus === true ? article.favoritesCount = article.favoritesCount + 1 : article.favoritesCount = article.favoritesCount - 1'><i class="fas fa-heart"></i> {{article.favoritesCount}}</div>
+            <div class="dropdown-menu">
+                <i class="fas fa-ellipsis-v"></i>
+                <div class="dropdown">
+                    <ul *ngIf='article.author.username === this.authService.userName'>
+                        <li routerLink='/editor/{{article.slug}}'>Edit</li>
+                        <li (click)='deleteArticle(article.slug)'>Delete</li>
+                    </ul>
+                    <ul *ngIf='article.author.username !== this.authService.userName'>
+                        <li *ngIf='!article.author.following' (click)='this.profileService.followUser(article.author.username); this.article.author.following = !this.article.author.following'>Follow</li>
+                        <li *ngIf='article.author.following' (click)='this.profileService.unfollowUser(article.author.username); this.article.author.following = !this.article.author.following'>Unfollow</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="article-middle read-article" routerLink='/article/{{article.slug}}'>
+        <h3>{{article.title}}</h3>
+        <p>{{article.description}}</p>
+    </div>
+    <div class="article-bottom">
+        <span routerLink='article/{{article.slug}}' class="read-article">Read More...</span>
+        <app-tags [tags]='article.tagList'></app-tags>
+    </div>
+</div>

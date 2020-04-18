@@ -1,1 +1,25 @@
-<p>profile works!</p>
+<app-header></app-header>
+
+<div class="main">
+
+    <div class='home-banner'>
+        <div>
+
+            <img *ngIf="!this.profileService.profile?.image" src="" alt="">
+            <img *ngIf="this.profileService.profile?.image" src="{{this.profileService.profile?.image}}" alt="">
+            <span>{{this.profileService.profile?.username}}</span>
+            <span>{{this.profileService.profile?.bio}}</span>
+        </div>
+    </div>
+
+    <ul class='feedsNav'>
+        <li routerLink='/profile/{{this.username}}' routerLinkActive='active' [routerLinkActiveOptions]="{ exact: true, __change_detection_hack__: this.username }">My Posts</li>
+        <li routerLink='/profile/{{this.username}}/favorites' routerLinkActive='active' [routerLinkActiveOptions]="{ exact: true, __change_detection_hack__: this.username }">Favorited Post</li>
+    </ul>
+
+    <router-outlet></router-outlet>
+
+</div>
+
+
+<app-footer></app-footer>

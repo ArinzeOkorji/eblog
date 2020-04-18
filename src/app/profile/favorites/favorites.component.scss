@@ -1,0 +1,72 @@
+ul.article-list {
+    width: 80%;
+    margin: 0 auto;
+    list-style: none;
+    li {
+        display: block;
+    }
+    li:not(:first-child) {
+        margin-top: 30px;
+        border-top: 1px solid #000;
+    }
+    .article-top {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px 0;
+        .author-details {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            img {
+                height: 40px;
+                width: 40px;
+                border-radius: 50%;
+                background-color: rebeccapurple;
+            }
+            .article-summary {
+                margin-left: 10px;
+                .author-name {
+                    color: rebeccapurple;
+                    display: block;
+                    cursor: pointer;
+                }
+                .article-date {
+                    font-size: 10px;
+                    color: #858585;
+                }
+            }
+        }
+        .favorites-count {
+            border-radius: 8px;
+            border: 1px solid rebeccapurple;
+            padding: 5px 10px;
+            cursor: pointer;
+            i,
+            svg {
+                color: rebeccapurple;
+            }
+        }
+    }
+    .article-middle {
+        h3 {
+            width: 60%;
+        }
+        p {
+            width: 70%;
+            color: #858585;
+            line-height: 1.5em;
+        }
+    }
+    .article-bottom {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+}
+
+.pagination-container {
+    width: 80%;
+    margin: 0 auto;
+    margin-top: 60px;
+}

@@ -4,6 +4,10 @@
     }
 }
 
+.main {
+    min-height: 100vh;
+}
+
 .home-banner {
     background-color: rebeccapurple;
     display: flex;
@@ -34,6 +38,10 @@
 
 .mt-3 {
     margin-top: 30px;
+}
+
+.mb-3 {
+    margin-bottom: 60px;
 }
 
 .row {
@@ -78,67 +86,26 @@ ul.feedsNav {
     width: 100%;
     border-bottom: 1px solid #000;
     li {
-        padding: 10px 15px;
+        padding: 10px 25px;
         border-bottom: 3px solid transparent;
-        font-weight: 900;
-        color: rgb(189, 189, 189)
+        font-weight: 600;
+        color: rgb(189, 189, 189);
+        cursor: pointer;
+        font-size: 20px;
     }
     li.active {
         border-bottom-color: rebeccapurple;
+        color: rebeccapurple;
     }
 }
 
-.article-top {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px 0;
-    .author-details {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        img {
-            height: 40px;
-            width: 40px;
-            border-radius: 50%;
-            background-color: rebeccapurple;
-        }
-        .article-summary {
-            margin-left: 10px;
-            .author-name {
-                color: rebeccapurple;
-                display: block;
-            }
-            .article-date {
-                font-size: 10px;
-                color: #858585;
-            }
-        }
+ul.article-list {
+    list-style: none;
+    li {
+        display: block;
     }
-    .favorites-count {
-        border-radius: 8px;
-        border: 1px solid rebeccapurple;
-        padding: 5px 10px;
-        cursor: pointer;
-        i {
-            color: rebeccapurple;
-        }
+    li:not(:first-child) {
+        margin-top: 30px;
+        border-top: 1px solid #000;
     }
-}
-
-.article-middle {
-    h3 {
-        width: 60%;
-    }
-    p {
-        width: 70%;
-        color: #858585;
-        line-height: 1.5em;
-    }
-}
-
-.article-bottom {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
 }

@@ -1,0 +1,61 @@
+.main {
+    min-height: 100vh;
+    padding-bottom: 50px;
+}
+
+form {
+    width: 50%;
+    margin: 0 auto;
+    margin-top: 30px;
+    .heading {
+        text-align: center;
+        h1 {
+            font-size: 3em;
+        }
+    }
+    .md-form {
+        margin-top: 30px;
+        input,
+        textarea {
+            border: 1px solid rgb(161, 161, 161);
+            border-radius: 8px;
+            padding: 20px;
+            padding-right: 0;
+            width: 97%;
+            color: #333;
+            font-size: 25px;
+        }
+         ::placeholder {
+            font-size: 25px;
+            color: rgb(172, 172, 172);
+        }
+    }
+    .btn-container {
+        margin-top: 30px;
+        display: flex;
+        button {
+            border-radius: 8px;
+            padding: 20px 50px;
+            border: none;
+            font-size: 25px;
+            cursor: pointer;
+        }
+        button.update-settings {
+            font-weight: bold;
+            background-color: rebeccapurple;
+            color: #ffffff;
+            margin-left: auto;
+        }
+        button.log-out {
+            background-color: #fff;
+            color: red;
+            border: 1px solid red;
+            font-weight: 400;
+        }
+    }
+    .btn-container.log-out {
+        margin-top: 10px;
+        padding-top: 10px;
+        border-top: 1px solid rgb(151, 151, 151);
+    }
+}

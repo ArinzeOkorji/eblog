@@ -1,0 +1,54 @@
+.main {
+    height: 100vh;
+}
+
+form {
+    width: 50%;
+    margin: 0 auto;
+    margin-top: 30px;
+    .heading {
+        text-align: center;
+        h1 {
+            font-size: 3em;
+        }
+        h2 {
+            color: rebeccapurple;
+            cursor: pointer;
+        }
+    }
+    .md-form {
+        margin-top: 30px;
+        input {
+            border: 1px solid rgb(161, 161, 161);
+            border-radius: 8px;
+            padding: 20px;
+            padding-right: 0;
+            width: 97%;
+        }
+        [placeholder] {
+            font-size: 25px;
+            color: rgb(172, 172, 172);
+        }
+    }
+    .btn-container {
+        margin-top: 30px;
+        display: flex;
+        button {
+            background-color: rebeccapurple;
+            color: #ffffff;
+            font-weight: bold;
+            border-radius: 4px;
+            padding: 20px 50px;
+            margin-left: auto;
+            border: none;
+            font-size: 25px;
+            cursor: pointer;
+        }
+    }
+}
+
+.errorMessage {
+    color: red;
+    margin-top: 20px;
+    font-size: 20px;
+}

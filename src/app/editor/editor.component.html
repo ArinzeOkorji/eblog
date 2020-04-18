@@ -1,1 +1,27 @@
-<p>editor works!</p>
+<app-header></app-header>
+
+<div class="main">
+    <form (ngSubmit)='submit(form)' #form='ngForm'>
+        <div class="md-form">
+            <div class="errorMessage" *ngIf="title.invalid">Title cannot be empty</div>
+            <input required type="text" placeholder="Article title" name="title" [(ngModel)]='titleText' #title='ngModel'>
+        </div>
+        <div class="md-form">
+            <div class="errorMessage" *ngIf="description.invalid">Description cannot be empty</div>
+            <input required type="text" placeholder="What's this article about?" name="description" [(ngModel)]='descriptionText' #description='ngModel'>
+        </div>
+        <div class="md-form">
+            <div class="errorMessage" *ngIf="body.invalid">Article body cannot be empty</div>
+            <textarea required type="text" placeholder="Write your article (in markdown)" name="body" [(ngModel)]='bodyText' #body='ngModel'></textarea>
+        </div>
+        <div class="md-form">
+            <input type="text" placeholder="Enter tags" name="tags" [(ngModel)]='tagsText'>
+        </div>
+
+        <div class="btn-container">
+            <button type="submit" class="post" [disabled]='!form.form.valid'>Publish Article</button>
+        </div>
+    </form>
+</div>
+
+<app-footer></app-footer>

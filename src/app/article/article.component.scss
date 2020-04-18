@@ -1,0 +1,137 @@
+.main {
+    min-height: 100vh;
+}
+
+.article-banner {
+    background-color: rebeccapurple;
+    padding: 35px 15px;
+    padding-top: 10px;
+    h1 {
+        color: #fff;
+        font-weight: bold;
+        /*
+      margin-top: 10px; */
+        margin-bottom: 20px;
+        font-size: 45px;
+        text-shadow: 0px 2px 2px rgba(0, 0, 0, 0.2);
+    }
+    span {
+        color: #fff;
+        font-weight: lighter;
+        font-size: 25px;
+    }
+}
+
+.article-info {
+    display: flex;
+    .author-summary {
+        display: flex;
+        img {
+            height: 40px;
+            width: 40px;
+            border-radius: 50%;
+            background-color: #fff;
+        }
+        .article-details {
+            margin-left: 10px;
+            .author-name {
+                cursor: pointer;
+                color: #fff;
+                display: block;
+            }
+            .article-date {
+                font-size: 10px;
+                color: #e9e9e9;
+            }
+        }
+    }
+    .favorites-count {
+        justify-content: space-around;
+        display: flex;
+        min-width: 183px;
+        align-items: center;
+        border-radius: 4px;
+        border: 1px solid #fff;
+        padding: 0px 10px;
+        color: #fff;
+        cursor: pointer;
+        margin-left: 30px;
+        i,
+        svg {
+            color: #fff;
+        }
+    }
+    .favorites-count.favorited {
+        border: 1px solid transparent;
+        background-color: #fff;
+        color: rebeccapurple;
+        i,
+        svg {
+            color: rebeccapurple;
+        }
+    }
+}
+
+.article-body {
+    padding-top: 50px;
+    min-height: 50vh;
+    margin-left: 50px;
+    margin-right: 50px;
+    p {
+        margin-top: 40px;
+        font-weight: 500;
+    }
+    padding-bottom: 30px;
+    border-bottom: 1px solid #000;
+}
+
+.article-info.footer {
+    justify-content: center;
+    padding: 30px 0;
+    .author-summary {
+        display: flex;
+        img {
+            height: 40px;
+            width: 40px;
+            border-radius: 50%;
+            background-color: rebeccapurple;
+        }
+        .article-details {
+            margin-left: 10px;
+            .author-name {
+                cursor: pointer;
+                color: rebeccapurple;
+                display: block;
+            }
+            .article-date {
+                font-size: 10px;
+                color: #858585;
+            }
+        }
+    }
+    .favorites-count {
+        justify-content: space-around;
+        display: flex;
+        min-width: 183px;
+        align-items: center;
+        border-radius: 8px;
+        border: 1px solid rebeccapurple;
+        padding: 0px 10px;
+        cursor: pointer;
+        color: rebeccapurple;
+        margin-left: 30px;
+        i,
+        svg {
+            color: rebeccapurple;
+        }
+    }
+    .favorites-count.favorited {
+        border: 1px solid transparent;
+        background-color: rebeccapurple;
+        color: #fff;
+        i,
+        svg {
+            color: #fff;
+        }
+    }
+}
