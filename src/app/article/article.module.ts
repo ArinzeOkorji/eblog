@@ -15,7 +15,6 @@ import { SharedModule } from '../shared/shared.module';
     ArticleRoutingModule,
     SharedModule,
     MarkdownModule.forRoot({
-      sanitize: SecurityContext.NONE,
       markedOptions: {
         provide: MarkedOptions,
         useValue: {

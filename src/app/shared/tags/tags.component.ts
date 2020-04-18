@@ -24,7 +24,7 @@ export class TagsComponent implements OnInit, AfterViewInit {
 
   ngAfterViewInit() {
     if (this.isPopularTag) {
-      let listOfTags;
+      // let listOfTags;
      /* this.li.changes.subscribe(res => {
        console.log(res)
        res.forEach(element => {
@@ -32,12 +32,12 @@ export class TagsComponent implements OnInit, AfterViewInit {
         element.nativeElement.style.cursor = 'pointer';
        });
      }); */
-     setTimeout(() => {
+     /* setTimeout(() => {
      listOfTags = this.li._results;
      listOfTags.forEach(element => {
       element.nativeElement.style.cursor = 'pointer';
     });
-     }, 1000);
+     }, 1000); */
   }
   }
 

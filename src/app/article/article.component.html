@@ -37,7 +37,7 @@
                 <div clase='article-date'>{{article?.createdAt | date}}</div>
             </div>
         </div>
-        <div class="favorites-count" [ngClass]='{favorited: favoriteStatus}' (click)='toggleFavorite(article, this.authService.userName); this.favoriteStatus === true ? article.favoritesCount = article.favoritesCount + 1 : article.favoritesCount = article.favoritesCount - 1'>
+        <div class="favorites-count" [ngClass]='{favorited: favoriteStatus}' (click)='toggleFavorite(article); this.favoriteStatus === true ? article.favoritesCount = article.favoritesCount + 1 : article.favoritesCount = article.favoritesCount - 1'>
             <i class="fas fa-heart"></i> Favourite Article ({{article?.favoritesCount}})
         </div>
     </div>
