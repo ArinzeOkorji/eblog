@@ -1,5 +1,7 @@
 # EBlog
 
+View live demo here: https://ng-eblog.netlify.app/
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.23.
 
 ## Development server
